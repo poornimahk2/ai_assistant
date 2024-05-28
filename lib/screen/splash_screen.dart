@@ -1,7 +1,10 @@
 import 'package:ai_assistant/helper/global.dart';
+import 'package:ai_assistant/helper/preference.dart';
+import 'package:ai_assistant/screen/home_screen.dart';
 import 'package:ai_assistant/screen/onboarding_screen.dart';
 import 'package:ai_assistant/widget/custom_loading.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -16,9 +19,14 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
 
     //Waiting for sometime to move to next screen
-    Future.delayed(Duration(seconds: 2),(){
-      Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (_)=> const OnboardingScreen()));
+    Future.delayed(const Duration(seconds: 2),(){
+    //   Navigator.of(context).pushReplacement(
+    //     MaterialPageRoute(builder: (_)=> Preference.showOnboard? const OnboardingScreen()
+    //     : const HomeScreen()));
+
+    //off -> is similar to psuhreplacement -> replace new screen to current screen
+    // to -> push just move new screen wiyhout removing current
+    Get.off(() =>Preference.showOnboard? const OnboardingScreen()  : const HomeScreen());
     });
   }
 

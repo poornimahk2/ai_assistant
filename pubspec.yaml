@@ -23,6 +23,16 @@ dev_dependencies:
   icons_launcher: ^2.1.7
   lottie: ^3.1.2
 
+#To keep track of screens
+  hive: ^4.0.0-dev.2
+  isar_flutter_libs: ^4.0.0-dev.13
+
+#Acessing Storage Path
+  path_provider: ^2.1.0
+
+#GetX Package
+  get: ^4.6.6
+
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 

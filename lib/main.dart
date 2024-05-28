@@ -1,10 +1,17 @@
+// ignore_for_file: depend_on_referenced_packages
+
+import 'package:ai_assistant/helper/global.dart';
+import 'package:ai_assistant/helper/preference.dart';
 import 'package:ai_assistant/screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get_navigation/get_navigation.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
+  Preference.initialize();
+
+ await SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
 
   //Portrait Orientation
   await SystemChrome.setPreferredOrientations( 
@@ -18,7 +25,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return const  GetMaterialApp(
+      title: appName,
       //Remove banner
       debugShowCheckedModeBanner: false,
       home:SplashScreen(),
